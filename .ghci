@@ -1,0 +1,2 @@
+let tf (x:_) _ = pure $ "λ [" ++ x ++ "] > "
+:set prompt-function tf
