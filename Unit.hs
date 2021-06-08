@@ -23,8 +23,6 @@ instance IsUnit () where
 instance IsUnit a where
   isUnit = False
 
--- This function causes the overlapping instances error,
--- not the instance definitions themselves
 -- guardUnit :: forall a. a -> Either String a
 -- guardUnit x = case isUnit @a of
 --   True  -> Left "unit is not allowed"
