@@ -4,7 +4,7 @@
 
 module Aeson where
 
-import qualified Data.Aeson     as A
+import           Data.Aeson
 import           Deriving.Aeson
 import           GHC.Generics   (Generic)
 
@@ -18,7 +18,7 @@ data RecordA a =
     , aField2 :: a
     , aField3 :: a
     } deriving stock (Eq, Show, Generic)
-      deriving (A.ToJSON) via CustomJSON '[OmitNothingFields] (RecordA a)
+      deriving (ToJSON) via CustomJSON '[OmitNothingFields] (RecordA a)
 
 testRecordA :: RecordA (Maybe ())
 testRecordA = RecordA Nothing Nothing Nothing
@@ -29,7 +29,7 @@ data RecordB =
     , bField2 :: Maybe ()
     , bField3 :: Maybe ()
     } deriving stock (Eq, Show, Generic)
-      deriving (A.ToJSON) via CustomJSON '[OmitNothingFields] RecordB
+      deriving (ToJSON) via CustomJSON '[OmitNothingFields] RecordB
 
 testRecordB :: RecordB
 testRecordB = RecordB Nothing Nothing Nothing

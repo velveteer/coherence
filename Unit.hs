@@ -9,11 +9,6 @@ module Unit where
 
 -- But what about incoherent instances?
 
--- This doesn't make sense as a term-level function.
--- isUnit :: * -> Bool
--- isUnit () = True
--- isUnit _  = False
-
 class IsUnit a where
   isUnit :: Bool
 

@@ -12,10 +12,13 @@ ex0 = listify (+) [1, 2]
 ex1 ::  Maybe Int
 ex1 = listify (+) [1]
 
-ex2 ::  Maybe Triad
-ex2 = listify Triad ["h", "el", "lo"]
+ex2 ::  Maybe (Triple String)
+ex2 = listify Triple ["h", "el", "lo"]
 
-data Triad = Triad String String String
+ex3 ::  Maybe (Triple Int)
+ex3 = listify Triple [20, 30, 40]
+
+data Triple a = Triple a a a
   deriving (Eq, Show)
 
 class Listable input element output where
